@@ -1,10 +1,10 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import { render } from "react-dom";
+import {store, persistor} from "./redux/store";
 import App from "./app/App";
+import "./index.scss";
 
-const { PUBLIC_URL } = process.env;
-
-ReactDOM.render(
-  <App basename={PUBLIC_URL} />,
-  document.getElementById("root")
+render(
+  <App store={store} persistor={persistor} basename={process.env.PUBLIC_URL} />,
+  document.getElementById('root')
 );
